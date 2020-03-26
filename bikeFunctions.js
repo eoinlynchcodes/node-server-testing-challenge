@@ -10,5 +10,7 @@ function getAll(){
 }
 
 function deleteABike(id){
-    return null;
+    return db('myBikes')
+    .where('id', id)
+    .del()
 }

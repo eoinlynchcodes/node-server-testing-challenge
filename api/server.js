@@ -19,4 +19,15 @@ server.get('/allBikes', (req, res) => {
     })
 })
 
+server.delete('/aBike/:id', (req, res) => {
+   const id = req.params.id;
+    bikeFunctions.deleteABike(id)
+    .then(response => {
+        res.status(200).json(response);
+    })
+    .catch(error => {
+        res.status(500).json(error);
+    })
+})
+
 module.exports = server;
